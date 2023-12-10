@@ -1,8 +1,5 @@
 .back{
-    height: 100%;
-    width: 100%;
-    background: url(oruga.png) no-repeat;
-    background-size: cover;
+    background: url(oruga.png);
     
 }
 .www{
