@@ -1,50 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>团长，车已经准备好了</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="back">
-        <div class="www">
-            <h1>奥尔加！！！！！！！！！！！！！！！！！</h1>
-        <p>团长！团长！你在干什么啊团长！！！！！！！！！</p>
-        <a href="https://www.bilibili.com/video/BV1q64y1T7hd/?spm_id_from=333.337.search-card.all.click&vd_source=3422574120bd3150fd8c62546bad571f" target="_blank">[点我跳转名场面]</a>
-        <br>
-        <p>我是铁华团团长,奥尔加椅子卡daze</p>
-        <p>保护团员是我的工作</p>
-        <img src="ooga.png" alt="picture" width="200tx">
-        <br>
-        <p>L:總感覺好安靜啊</p>
-        <br>
-        <p>L:街上也沒有加拉爾霍恩的人</p>
-        <br>
-        <p>L:和總部差別真大</p>
-        <br>
-        <p>o:是啊</p>
-        <br>
-        <p>o:大概是把火星的戰力都調過去了</p>
-        <br>
-        <p>L:不過那些已經不重要了内</p>
-        <br>
-        <p>o:你的心情真好呐</p>
-        <br>
-        <p>L:那是當然的</p>
-        <br>
-        <p>L:大家都能得救 ，塔卡基也在努力著</p>
-        <br>
-        <p>   所以我也要加油才行</p>
-        <br>
-        <p>O:是啊—</p>
-        <br>
-        <p>    我們一直以來積纍的東西</p>
-        <br>
-        <p>    全部木大加拿卡他</p>
-        <br>
-        <p>    今後也是</p>
-        <br>
-        <p>    只要我們不停下脚步</p>
-        <br>
-        <p>    道路就會不斷延伸......</p>
-        </div>
-    </body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <h1><a href="index.html">个人博客</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#categories">分类</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-screen">
+            <div class="hero-content">
+                <h2>分享思想，记录生活</h2>
+                <p>欢迎来到我的个人博客</p>
+            </div>
+        </section>
+
+        <section id="latest-posts" class="full-screen">
+            <h2>最新文章</h2>
+            <div class="posts-container">
+                <article class="post-item glass-effect">
+                    <h3><a href="post1.html">第一篇博客文章</a></h3>
+                    <p class="post-meta">2026-04-12 | 技术</p>
+                    <p class="post-excerpt">这是我的第一篇博客文章，记录了我开始博客之旅的心情和想法。</p>
+                </article>
+                <article class="post-item glass-effect">
+                    <h3><a href="post2.html">学习前端开发的心得</a></h3>
+                    <p class="post-meta">2026-04-10 | 技术</p>
+                    <p class="post-excerpt">分享我学习前端开发的经验和心得，希望对初学者有所帮助。</p>
+                </article>
+                <article class="post-item glass-effect">
+                    <h3><a href="post3.html">生活中的小确幸</a></h3>
+                    <p class="post-meta">2026-04-08 | 生活</p>
+                    <p class="post-excerpt">记录生活中那些微小但美好的瞬间，让我们更加珍惜当下。</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="categories" class="full-screen">
+            <h2>文章分类</h2>
+            <div class="categories-container">
+                <a href="category-tech.html" class="category-item glass-effect">
+                    <h3>技术</h3>
+                    <p>12篇文章</p>
+                </a>
+                <a href="category-life.html" class="category-item glass-effect">
+                    <h3>生活</h3>
+                    <p>8篇文章</p>
+                </a>
+                <a href="category-travel.html" class="category-item glass-effect">
+                    <h3>旅行</h3>
+                    <p>5篇文章</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="full-screen">
+            <div class="about-content glass-effect">
+                <h2>关于我</h2>
+                <p>我是一名热爱技术和生活的博客作者，专注于分享前端开发技术和生活感悟。通过博客，我希望能够与更多志同道合的人交流，共同成长。</p>
+                <p>我喜欢探索新的技术，记录生活中的美好瞬间，并且乐于分享我的经验和心得。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 个人博客</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
