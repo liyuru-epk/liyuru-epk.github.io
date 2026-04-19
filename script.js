@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let isScrolling = false;
     const scrollThreshold = 50; // 滚动阈值，调整这个值可以改变触发翻页的灵敏度
 
+    // 设备检测函数
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               (window.innerWidth <= 768);
+    }
+
     // 只有当有.full-screen section时才执行翻页相关代码
     if (sections.length > 0) {
         function scrollToSection(index) {
@@ -47,43 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        function handleTouchStart(e) {
-            touchStartY = e.touches[0].clientY;
+        // 只有在非移动端设备上添加鼠标滚轮事件监听器
+        if (!isMobileDevice()) {
+            // 监听鼠标滚轮事件
+            window.addEventListener('wheel', handleWheel);
         }
-
-        function handleTouchMove(e) {
-            if (isScrolling) {
-                e.preventDefault();
-                return;
-            }
-            
-            const touchEndY = e.touches[0].clientY;
-            const deltaY = touchStartY - touchEndY;
-            
-            if (Math.abs(deltaY) > scrollThreshold) {
-                e.preventDefault();
-                
-                if (deltaY > 0) {
-                    // 向下滑动
-                    if (currentSection < sections.length - 1) {
-                        scrollToSection(currentSection + 1);
-                    }
-                } else {
-                    // 向上滑动
-                    if (currentSection > 0) {
-                        scrollToSection(currentSection - 1);
-                    }
-                }
-            }
-        }
-
-        // 监听鼠标滚轮事件
-        window.addEventListener('wheel', handleWheel);
-        
-        // 监听触摸事件（移动端）
-        let touchStartY = 0;
-        window.addEventListener('touchstart', handleTouchStart);
-        window.addEventListener('touchmove', handleTouchMove);
 
         // 监听导航链接点击
         document.querySelectorAll('nav a').forEach(link => {
@@ -155,26 +129,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 初始化首页文章列表和分类
+    function initializeHomePage() {
+        loadLatestPosts('#posts-container');
+        loadCategories('#categories-container');
+    }
+    
     // 自动计算并更新分类文章数量
     function updateCategoryCounts() {
-        // 定义每个分类对应的文章链接
-        const categories = {
-            'tech': ['post1.html', 'post2.html'],
-            'life': ['post3.html'],
-            'travel': []
-        };
-        
-        // 更新首页分类显示
-        for (const [category, posts] of Object.entries(categories)) {
-            const categoryItem = document.querySelector(`.category-item:nth-child(${Object.keys(categories).indexOf(category) + 1}) p`);
-            if (categoryItem) {
-                categoryItem.textContent = `${posts.length}篇文章`;
-            }
+        if (typeof loadCategories !== 'undefined') {
+            loadCategories('#categories-container');
         }
     }
     
-    // 页面加载时更新分类文章数量
-    updateCategoryCounts();
+    // 页面加载时初始化
+    initializeHomePage();
     
     function saveComment(comment) {
         let comments = JSON.parse(localStorage.getItem('comments')) || [];

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的天呐原神！ - 个人博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <h1><a href="index.html">个人博客</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#categories">分类</a></li>
+                <li><a href="index.html#about">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="post-content">
+            <div class="post-container">
+                <h1>原神！</h1>
+                <p class="post-meta">2026-04-17 | 生活</p>
+                <div class="post-body">
+                    <p>哦哦哦哦哦哦原神！！！！！</p>
+
+                
+                </div>
+            </div>
+        </section>
+
+        <section id="related-posts">
+            <h2>相关文章</h2>
+            <div class="posts-container" id="related-posts-container">
+            </div>
+        </section>
+
+        <section id="comments">
+            <div class="comments-container">
+                <h2>评论</h2>
+                <div class="comment-form">
+                    <h3>发表评论</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="name">昵称</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">评论内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">提交评论</button>
+                    </form>
+                </div>
+                <div class="comments-list">
+                    <h3>评论列表</h3>
+                    <div id="commentsContainer"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 个人博客</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRelatedArticles('post3', '#related-posts-container');
+        });
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="glass-header">
-        <h1>个人博客</h1>
+        <h1><a href="index.html">个人博客</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">首页</a></li>
@@ -21,17 +21,7 @@
     <main>
         <section id="category-content">
             <h2>旅行分类</h2>
-            <div class="posts-container">
-                <article class="post-item glass-effect">
-                    <h3><a href="#">旅行计划</a></h3>
-                    <p class="post-meta">2026-04-05 | 旅行</p>
-                    <p class="post-excerpt">计划一次完美的旅行，探索未知的世界。</p>
-                </article>
-                <article class="post-item glass-effect">
-                    <h3><a href="#">旅行记忆</a></h3>
-                    <p class="post-meta">2026-04-01 | 旅行</p>
-                    <p class="post-excerpt">记录旅行中的美好回忆，分享旅行的乐趣。</p>
-                </article>
+            <div class="posts-container" id="category-posts-container">
             </div>
         </section>
     </main>
@@ -40,6 +30,12 @@
         <p>&copy; 2026 个人博客</p>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPostsByCategory('travel', '#category-posts-container');
+        });
+    </script>
 </body>
 </html>

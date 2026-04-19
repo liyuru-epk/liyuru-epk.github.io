@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制作了一个报警系统 - 个人博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <h1><a href="index.html">个人博客</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">首页</a></li>
+                <li><a href="index.html#categories">分类</a></li>
+                <li><a href="index.html#about">关于</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="post-content">
+            <div class="post-container">
+                <h1>制作了一个报警系统</h1>
+                <p class="post-meta">2026-04-18 | 技术</p>
+                <div class="post-body">
+                    <p>我们宿舍的REDBEANBIGGOD最近利用业余时间制作了一个简单的报警系统，这个系统主要用于宿舍阿姨监控，让阿姨一辈子抓不到我们宿舍讲话。整个项目分为三个主要部分：传感器节点、数据采集中心和远程通知模块。传感器节点负责人体红外感应，数据采集中心使用STM32单片机作为主控，通过五米神秘数据线连到一个led上。</p>
+             
+                    <p>如果你对这个项目感兴趣，可以关注我的博客获取更多技术细节。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments">
+            <div class="comments-container">
+                <h2>评论区</h2>
+                <div class="comment-form glass-effect">
+                    <h3>发表评论</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="name">昵称</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">评论内容</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">提交评论</button>
+                    </form>
+                </div>
+                <div class="comments-list">
+                    <h3>评论列表</h3>
+                    <div id="commentsContainer"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="related-posts">
+            <h2>相关文章</h2>
+            <div class="posts-container" id="related-posts-container">
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 个人博客</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRelatedArticles('post2', '#related-posts-container');
+        });
+    </script>
+</body>
+</html>

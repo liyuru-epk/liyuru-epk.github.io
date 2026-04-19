@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="glass-header">
-        <h1>个人博客</h1>
+        <h1><a href="index.html">个人博客</a></h1>
         <nav>
             <ul>
                 <li><a href="index.html">首页</a></li>
@@ -21,12 +21,7 @@
     <main>
         <section id="category-content">
             <h2>生活分类</h2>
-            <div class="posts-container">
-                <article class="post-item glass-effect">
-                    <h3><a href="post3.html">生活中的小确幸</a></h3>
-                    <p class="post-meta">2026-04-08 | 生活</p>
-                    <p class="post-excerpt">记录生活中那些微小但美好的瞬间，让我们更加珍惜当下。</p>
-                </article>
+            <div class="posts-container" id="category-posts-container">
             </div>
         </section>
     </main>
@@ -35,6 +30,12 @@
         <p>&copy; 2026 个人博客</p>
     </footer>
 
+    <script src="data.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPostsByCategory('life', '#category-posts-container');
+        });
+    </script>
 </body>
 </html>
